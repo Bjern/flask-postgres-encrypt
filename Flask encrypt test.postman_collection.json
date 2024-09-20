@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "c35f07fc-3fbc-4da8-b0f1-ccc3006c938f",
+		"name": "Flask encrypt test",
+		"description": "A collection of tests for the flask encryption app.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate encryption",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"first_name\": \"Jack\", \"last_name\": \"Sparrow\", \"email\": \"jack.sparrow@piratebay.com\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/encrypt-data",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"encrypt-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ciphertext\":\"XRY8FRCD3nN1Q4UhEhkwqb1zx4mgtARH0rFR699zyqp3yFck0mUiZRCFXxy7ikFUQwKF9uzl80G8a_ovYvzcSYgaYNwoZ3uK0Hpg-eJ1fVCjnEZb23HVstlh2LVfLw\",\"encrypted_key\":\"mOD8ss0rp5gh3tjOpXBfxFIknGiSH-32gSqwgYiA-C1C7g4TBX3Aq1reLFAgP5cXQm_mV380aZxpLlTTPs0AV56OgTkORm0eebhWi7ISLtyoJ3XZpsBrCbn3LAwQGMo3NIPmvmKd8Jat7WUOnXnhRkMvcRT3CXvrDj6_2d6v3KE\",\"iv\":\"rRKu5Z5DQfO-ZxhC\",\"protected\":\"eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ\",\"tag\":\"Ta7w6zNdi-myAKI7Ql6aDg\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/register-user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ciphertext\":\"XRY8FRCD3nN1Q4UhEhkwqb1zx4mgtARH0rFR699zyqp3yFck0mUiZRCFXxy7ikFUQwKF9uzl80G8a_ovYvzcSYgaYNwoZ3uK0Hpg-eJ1fVCjnEZb23HVstlh2LVfLw\",\"encrypted_key\":\"mOD8ss0rp5gh3tjOpXBfxFIknGiSH-32gSqwgYiA-C1C7g4TBX3Aq1reLFAgP5cXQm_mV380aZxpLlTTPs0AV56OgTkORm0eebhWi7ISLtyoJ3XZpsBrCbn3LAwQGMo3NIPmvmKd8Jat7WUOnXnhRkMvcRT3CXvrDj6_2d6v3KE\",\"iv\":\"rRKu5Z5DQfO-ZxhC\",\"protected\":\"eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ\",\"tag\":\"Ta7w6zNdi-myAKI7Ql6aDg\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/get-user/fd32c2a9-ccfb-4b40-a441-80e3b8765937",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"get-user",
+						"fd32c2a9-ccfb-4b40-a441-80e3b8765937"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
